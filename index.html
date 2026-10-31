@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An educational AI project that analyses text for hate speech and offensive language.">
+  <title>Hate Speech Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Hate Speech Detection home"><span class="brand-icon">H</span><span>Hate Speech Detection</span></a>
+    <nav><a href="#analyser">Text Analyser</a><a href="#about">About</a><a href="#awareness">Awareness</a></nav>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="eyebrow">ARTIFICIAL INTELLIGENCE · NATURAL LANGUAGE PROCESSING</div>
+      <h1>Make the internet<br><span>a more respectful place.</span></h1>
+      <p>An educational AI tool that analyses written text and predicts whether it contains hate speech, offensive language, or neither.</p>
+      <a class="primary-link" href="#analyser">Try the text analyser <span aria-hidden="true">↓</span></a>
+      <div class="hero-note">A student project based on supervised machine learning.</div>
+    </section>
+
+    <section class="stats" aria-label="Project method">
+      <article><span class="stat-label">AI DOMAIN</span><strong> NLP </strong><small>Natural Language Processing</small></article>
+      <article><span class="stat-label">LEARNING TYPE</span><strong>Supervised</strong><small>Trained on labelled examples</small></article>
+      <article><span class="stat-label">CLASSIFIER</span><strong>Decision Tree</strong><small>Machine learning algorithm</small></article>
+    </section>
+
+    <section class="analyser-section" id="analyser">
+      <div class="section-heading"><div class="eyebrow">TRY IT YOURSELF</div><h2>Analyse a message</h2><p>Enter a social media post, comment, or short message. Your text will remain visible in the box while you analyse it.</p></div>
+      <div class="analyser-grid">
+        <div class="input-card">
+          <label for="userText">Text to analyse</label>
+          <textarea id="userText" rows="7" maxlength="5000" placeholder="Type or paste your text here..." spellcheck="true"></textarea>
+          <div class="input-footer"><span id="charCount">0 / 5000 characters</span><button id="clearButton" class="clear-button" type="button">Clear text</button></div>
+          <button id="analyseButton" class="analyse-button" type="button"><span>Analyse text</span><span aria-hidden="true">→</span></button>
+          <p id="status" class="status" role="status" aria-live="polite">Your text is processed in this browser for this demonstration.</p>
+          <div id="result" class="result hidden" aria-live="polite">
+            <div class="result-top"><span class="result-kicker">MODEL PREDICTION</span><span id="classBadge" class="class-badge">RESULT</span></div>
+            <h3 id="resultTitle"></h3><p id="resultDescription"></p>
+            <p class="disclaimer">This is an automated prediction, not a final judgement. The model can misunderstand context, sarcasm, dialect, or meaning.</p>
+          </div>
+        </div>
+        <aside class="how-card"><div class="eyebrow">HOW IT WORKS</div><h3>From text to prediction</h3>
+          <ol class="steps"><li><b>Input</b><span>A user enters a message.</span></li><li><b>Pre-processing</b><span>The text is cleaned and split into words.</span></li><li><b>Feature extraction</b><span>CountVectorizer converts words into numerical features.</span></li><li><b>Classification</b><span>A trained Decision Tree predicts one of three categories.</span></li></ol>
+          <div class="model-chip">Trained Decision Tree model</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="categories" id="about"><div class="section-heading"><div class="eyebrow">UNDERSTANDING THE OUTPUT</div><h2>Three possible categories</h2><p>The model assigns the text to one of the categories it learned from its labelled training data.</p></div>
+      <div class="category-grid">
+        <article class="category-card hate"><span class="category-number">CLASS 0</span><h3>Hate speech</h3><p>Language that attacks or promotes prejudice against people based on identity or group membership.</p></article>
+        <article class="category-card offensive"><span class="category-number">CLASS 1</span><h3>Offensive language</h3><p>Insulting, abusive, or vulgar language that may not necessarily target a group.</p></article>
+        <article class="category-card neither"><span class="category-number">CLASS 2</span><h3>Neither</h3><p>Text the model does not classify as hate speech or offensive language.</p></article>
+      </div>
+    </section>
+
+    <section class="awareness" id="awareness"><div><div class="eyebrow">THINK BEFORE YOU POST</div><h2>Technology helps, but people matter.</h2><p>Online communication should be respectful. Pause before posting, consider how your words may affect others, and report harmful content through the appropriate platform tools when necessary.</p></div><div class="responsible"><h3>Responsible AI notice</h3><p>This project is an educational prototype. Predictions may be incorrect and can reflect limitations or bias in the training data. It should not be used as the sole basis for reporting, punishing, or silencing anyone.</p></div></section>
+  </main>
+  <footer>HATE SPEECH DETECTION · CBSE CLASS XII · ARTIFICIAL INTELLIGENCE</footer>
+  <script src="app.js"></script>
+</body>
+</html>
