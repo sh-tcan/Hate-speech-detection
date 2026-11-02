@@ -1,0 +1,1 @@
+https://sh-tcan.github.io/Hate-speech-detection/
